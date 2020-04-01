@@ -2,31 +2,25 @@ import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'product',
-    template: `
+    template: ` 
         <div class="media">
-            <div class="media-left">
-                <a href="#">
-                <img class="media-object" src="{{ data.imageUrl }}">
-                </a>
-            </div>
+            <img src="{{ data.imageUrl }}" class="mr-3" alt="...">
             <div class="media-body">
-                <h4 class="media-heading">
-                    {{ data.productName }}  
-                </h4>                
-                {{ data.releasedDate }} 
+                <h5 class="mt-0">{{ data.productName }}</h5>
+                {{ data.releasedDate }}
                 <rating 
-                    [rating-value]="data.rating" 
+                    [rating]="data.rating" 
                     [numOfReviews]="data.numOfReviews">
                 </rating>
                 <br>                                            
-                {{ data.description }}
+                {{ data.description }}                
             </div>
         </div>    
     `,
-    styles: [`
+    styles: [` 
         .media {
             margin-bottom: 20px;
-        }                       
+        }                      
     `]    
 })
 export class ProductComponent {
